@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Algorithm3{
-    static long[][] FM;
+    static long[][] FM = new long[2][2];
 
     public static long matrixFibonacci(int n){
         if(n == 0){
