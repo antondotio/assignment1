@@ -78,29 +78,31 @@ public class Fibonacci{
     public static void main(String[] args){ 
 
         long timei, timef, sum = 0;
-        // for(int i = 0; i <= 45; i++){
-        //     timei = System.nanoTime();
-        //     recursiveFibonacci(i);
-        //     timef = System.nanoTime() - timei;
-        //     System.out.println(timef);
-        // }
-
-        // for(int i = 1000000; i <= 100000000; i += 1000000){
-        //     timei = System.nanoTime();
-        //     loopFibonacci(i);
-        //     timef = System.nanoTime() - timei;
-        //     System.out.println(timef);
-        // }
-
-        for(int i = 1000000; i <= 2000000000; i += 1000000){
-            for(int j = 0; j < 1000 ; j++){
+        for(int i = 0; i <= 45; i++){
+            timei = System.nanoTime();
+            recursiveFibonacci(i);
+            timef = System.nanoTime() - timei;
+            System.out.println("Time to compute the " + i + " Fibonacci number with alg 1: " + timef);
+        }
+        System.out.println();
+        for(int i = 1000000; i <= 100000000; i += 1000000){
+            timei = System.nanoTime();
+            loopFibonacci(i);
+            timef = System.nanoTime() - timei;
+            System.out.println("Time to compute the " + i + " Fibonacci number with alg 2: " + timef);
+        }
+        System.out.println();
+        for(int i = 1000000; i <= 2000000000; i+= 1000000){
+            sum = 0;
+            for(int j = 0; j < 100000;j++){
                 timei = System.nanoTime();
                 matrixFibonacci(i);
                 timef = System.nanoTime() - timei;
                 sum += timef;
                 
             }
-            System.out.println(sum / 1000);
+            sum /= 100000;
+            System.out.println("Time to compute the " + i + " Fibonacci number with alg 3: " + sum);
         }
     }
 }
